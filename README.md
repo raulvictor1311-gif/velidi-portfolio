@@ -26,7 +26,13 @@ python3 -m http.server 5590
 
 Abra http://localhost:5590
 
-## Publicar na Vercel
+## No ar
+
+- Site: https://velidi-portfolio.vercel.app
+- Repositório: https://github.com/raulvictor1311-gif/velidi-portfolio
+- A Vercel publica sozinha a cada commit na branch `main` (cerca de 1 minuto).
+
+## Publicar na Vercel (manual, se precisar recriar)
 
 1. Crie uma conta em vercel.com.
 2. "Add New → Project" e arraste esta pasta (ou importe de um repositório GitHub).
