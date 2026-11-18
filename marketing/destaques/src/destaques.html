@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Destaques VELIDI.AI</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Destaques do Instagram — mesma identidade do portfólio (preto, dourado, roxo).
+ * Cada cena tem 1080×1920 (story). Abra com ?s=nome-da-cena. Gere os PNG/MP4 com render.js. */
+:root {
+  --ink: #0A0A0A; --coal: #121212; --card: #1C1C1E;
+  --fg: #F4F1EA; --muted: #A29D92; --dim: #6E6A62;
+  --gold: #D4AF37; --gold-hi: #F3DC8B; --gold-lo: #8C6C16; --violet: #7C3AED; --violet-2: #8B5CF6;
+  --line: rgba(240, 232, 214, 0.10); --line-2: rgba(240, 232, 214, 0.18);
+  --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-serif: "Instrument Serif", Georgia, serif;
+  --f-mono: "JetBrains Mono", ui-monospace, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; background: var(--ink); overflow: hidden; }
+body { font-family: var(--f-display); color: var(--fg); -webkit-font-smoothing: antialiased; }
+.scene { position: relative; width: 1080px; height: 1920px; overflow: hidden; display: none;
+  background:
+    radial-gradient(900px 700px at 50% 12%, rgba(124, 58, 237, 0.30), transparent 70%),
+    radial-gradient(800px 600px at 50% 100%, rgba(212, 175, 55, 0.16), transparent 70%),
+    var(--ink); }
+.scene.on { display: block; }
+.scene::before { /* grade técnica */
+  content: ""; position: absolute; inset: 0; opacity: .55;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 96px 96px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 45%, #000 15%, transparent 80%);
+  mask-image: radial-gradient(ellipse 70% 55% at 50% 45%, #000 15%, transparent 80%);
+}
+.scene::after { /* grão */
+  content: ""; position: absolute; inset: 0; opacity: .07; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.in { position: absolute; inset: 0; z-index: 1; }
+.serif { font-family: var(--f-serif); font-style: italic; font-weight: 400; color: var(--gold); letter-spacing: -0.01em; }
+.mono { font-family: var(--f-mono); letter-spacing: .18em; text-transform: uppercase; }
+.gold-text { background: linear-gradient(180deg, #FFF3C9, var(--gold-hi) 20%, var(--gold) 55%, var(--gold-lo)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.brand { position: absolute; left: 0; right: 0; top: 230px; display: flex; justify-content: center; align-items: center; gap: 18px; }
+.brand img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px rgba(212,175,55,.75), 0 0 30px rgba(56,150,255,.45); }
+.brand b { font-weight: 700; font-variation-settings: "wdth" 120; letter-spacing: .08em; font-size: 30px; }
+.brand b em { font-style: normal; color: var(--violet-2); font-weight: 500; }
+.title { font-weight: 200; font-variation-settings: "wdth" 120; text-transform: uppercase; letter-spacing: -0.03em; line-height: .92; }
+.rule { width: 120px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--violet-2), var(--gold)); }
+.pill { display: inline-flex; align-items: center; gap: 22px; border-radius: 999px; }
+.pill--gold { background: linear-gradient(135deg, var(--gold-hi), var(--gold) 50%, #B8901F); color: var(--ink); font-weight: 700; font-variation-settings: "wdth" 112; text-transform: uppercase; letter-spacing: .12em; }
+.pill--line { border: 2px solid rgba(212,175,55,.65); background: rgba(10,10,10,.6); }
+.ico { fill: none; stroke: var(--gold); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- capas (o Instagram recorta um círculo no centro) ---------- */
+.cover .in { display: grid; place-items: center; }
+.cover-ring { position: relative; width: 820px; height: 820px; border-radius: 50%; display: grid; place-items: center;
+  background: radial-gradient(circle at 50% 35%, rgba(124,58,237,.35), rgba(10,10,10,0) 65%), radial-gradient(circle at 50% 100%, rgba(212,175,55,.18), transparent 60%), #0d0d0f;
+  box-shadow: inset 0 0 0 4px rgba(212,175,55,.85), inset 0 0 0 14px rgba(10,10,10,1), inset 0 0 0 15px rgba(212,175,55,.25), 0 0 120px rgba(124,58,237,.35); }
+.cover-ring .ico { width: 300px; height: 300px; stroke-width: 1.15; filter: drop-shadow(0 0 24px rgba(212,175,55,.35)); }
+.cover-ring .lbl { position: absolute; bottom: 168px; font-family: var(--f-mono); font-size: 46px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold-hi); padding-left: .28em; }
+.cover-ring::before { content: ""; position: absolute; inset: 70px; border-radius: 50%; border: 2px dashed rgba(139,92,246,.35); }
+
+/* ---------- carregando (animado) ---------- */
+.load .in { display: grid; place-items: center; align-content: center; gap: 70px; text-align: center; }
+.spinner { position: relative; width: 230px; height: 230px; }
+.spinner i { position: absolute; left: 50%; top: 0; width: 22px; height: 70px; margin-left: -11px; border-radius: 12px; transform-origin: 50% 115px;
+  background: linear-gradient(180deg, var(--gold-hi), var(--gold)); animation: fade 1.2s linear infinite; }
+@keyframes fade { 0% { opacity: 1; } 100% { opacity: .12; } }
+.load h1 { font-weight: 300; font-variation-settings: "wdth" 115; font-size: 104px; line-height: 1; letter-spacing: -0.02em; }
+.load h1 .serif { display: block; font-size: 132px; margin-top: 8px; }
+.load .dots i { animation: blink 1.2s infinite; font-style: normal; }
+.load .dots i:nth-child(2) { animation-delay: .2s; } .load .dots i:nth-child(3) { animation-delay: .4s; }
+@keyframes blink { 0%, 100% { opacity: .2; } 50% { opacity: 1; } }
+.bar { width: 420px; height: 6px; border-radius: 6px; background: rgba(255,255,255,.08); overflow: hidden; }
+.bar b { display: block; height: 100%; width: 40%; border-radius: 6px; background: linear-gradient(90deg, var(--violet-2), var(--gold)); animation: slide 1.6s cubic-bezier(.65,0,.35,1) infinite; }
+@keyframes slide { 0% { transform: translateX(-110%); } 100% { transform: translateX(260%); } }
+.load .sub { font-size: 38px; color: var(--muted); max-width: 760px; line-height: 1.4; }
+.load .tag { position: absolute; left: 0; right: 0; bottom: 330px; text-align: center; font-size: 26px; color: var(--dim); }
+
+/* ---------- serviços ---------- */
+.svc .in { padding: 330px 80px 0; }
+.svc h1 { font-size: 132px; }
+.svc h1 .serif { text-transform: none; font-size: 1.05em; letter-spacing: -0.02em; }
+.svc .lede { margin-top: 26px; font-size: 42px; color: var(--muted); line-height: 1.3; max-width: 560px; }
+.svc .lede b { color: var(--gold-hi); font-weight: 500; }
+.svc-list { margin-top: 40px; display: grid; gap: 12px; width: 600px; position: relative; z-index: 2; }
+.svc-list li { list-style: none; display: grid; grid-template-columns: 74px 1fr; align-items: center; gap: 20px; padding: 12px 22px; border-radius: 18px;
+  background: linear-gradient(135deg, rgba(28,28,30,.92), rgba(18,18,18,.92)); border: 1.5px solid var(--line-2); box-shadow: 0 18px 40px -20px #000; }
+.svc-list li .ico { width: 54px; height: 54px; }
+.svc-list li b { display: block; font-size: 31px; font-weight: 600; line-height: 1.1; }
+.svc-list li span { display: block; font-size: 23px; color: var(--muted); margin-top: 4px; line-height: 1.25; }
+.phone { position: absolute; width: 470px; border-radius: 62px; padding: 14px; background: linear-gradient(160deg, #2b2b30, #0c0c0e 40%, #18181b);
+  box-shadow: 0 0 0 2px rgba(255,255,255,.08), 0 0 0 3px rgba(212,175,55,.55), 0 60px 120px -30px #000, 0 0 140px -20px rgba(124,58,237,.6); }
+.phone img { display: block; width: 100%; aspect-ratio: 9 / 19; object-fit: cover; object-position: top; border-radius: 50px; }
+.phone::after { content: ""; position: absolute; left: 50%; top: 34px; width: 34%; height: 32px; translate: -50% 0; border-radius: 999px; background: #050505; }
+.svc .phone { right: -90px; top: 560px; width: 430px; rotate: 9deg; }
+.who { position: absolute; left: 80px; right: 80px; top: 1250px; }
+.who h2 { display: flex; align-items: center; gap: 18px; font-size: 46px; font-weight: 600; }
+.who h2 .ico { width: 52px; height: 52px; }
+.who h2 .serif { font-size: 1.15em; }
+.who ul { margin-top: 26px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.who li { list-style: none; display: grid; justify-items: center; gap: 12px; padding: 24px 10px; border-radius: 20px; background: rgba(28,28,30,.85); border: 1.5px solid var(--line-2); text-align: center; font-size: 24px; color: var(--fg); line-height: 1.2; }
+.who li .ico { width: 56px; height: 56px; }
+.cta { position: absolute; left: 0; right: 0; bottom: 250px; display: flex; justify-content: center; }
+.cta .pill { padding: 30px 60px; font-size: 32px; }
+.cta .pill svg { width: 36px; height: 36px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+/* ---------- projetos ---------- */
+.proj .in { padding-top: 330px; text-align: center; }
+.proj h1 { font-size: 140px; }
+.proj h1 .serif { display: block; text-transform: none; font-size: .95em; margin-top: 4px; }
+.proj .rule { margin: 34px auto 0; }
+.fan { position: absolute; left: 50%; top: 740px; width: 0; height: 0; }
+.fan .phone { width: 250px; border-radius: 38px; padding: 8px; left: -125px; top: 0; transform-origin: 50% 1300px; box-shadow: 0 0 0 2px rgba(255,255,255,.08), 0 40px 80px -20px #000; }
+.fan .phone img { border-radius: 34px; }
+.fan .phone::after { top: 22px; height: 22px; }
+.fan .phone.mid { box-shadow: 0 0 0 2px rgba(212,175,55,.9), 0 0 80px -10px rgba(212,175,55,.5), 0 40px 80px -20px #000; }
+.proj .count { position: absolute; left: 0; right: 0; top: 1420px; display: grid; justify-items: center; gap: 22px; }
+.proj .count b { font-size: 46px; font-weight: 500; }
+.proj .count b .gold-text { font-size: 64px; font-weight: 700; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; }
+.chips span { font-family: var(--f-mono); font-size: 22px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); padding: 10px 18px; border: 1.5px solid rgba(212,175,55,.35); border-radius: 999px; }
+.url { position: absolute; left: 0; right: 0; bottom: 250px; text-align: center; font-size: 30px; color: var(--muted); }
+.url b { color: var(--fg); font-weight: 600; }
+
+/* ---------- processo ---------- */
+.proc .in { padding: 330px 90px 0; }
+.proc h1 { font-size: 150px; }
+.proc h1 .serif { text-transform: none; font-size: 1.08em; }
+.steps { margin-top: 70px; position: relative; display: grid; gap: 44px; }
+.steps::before { content: ""; position: absolute; left: 47px; top: 40px; bottom: 40px; width: 4px; border-radius: 4px; background: linear-gradient(180deg, var(--gold-hi), var(--gold) 60%, var(--violet-2)); box-shadow: 0 0 18px rgba(212,175,55,.5); }
+.steps li { list-style: none; position: relative; display: grid; grid-template-columns: 98px 1fr; gap: 32px; align-items: start; }
+.steps .n { width: 98px; height: 98px; border-radius: 50%; display: grid; place-items: center; font-family: var(--f-mono); font-size: 32px; font-weight: 500; color: var(--ink);
+  background: radial-gradient(circle at 35% 30%, var(--gold-hi), var(--gold) 60%, #9c7a1c); box-shadow: 0 0 0 8px rgba(212,175,55,.12), 0 0 40px rgba(212,175,55,.45); }
+.steps h3 { font-weight: 400; font-variation-settings: "wdth" 115; text-transform: uppercase; font-size: 46px; line-height: 1.05; letter-spacing: -0.01em; margin-top: 8px; }
+.steps p { font-size: 32px; color: var(--muted); line-height: 1.35; margin-top: 10px; }
+
+/* ---------- contato ---------- */
+.cont .in { display: grid; justify-items: center; align-content: start; padding-top: 330px; text-align: center; }
+.cont .big-ico { width: 230px; height: 230px; stroke-width: 1.2; filter: drop-shadow(0 0 30px rgba(212,175,55,.4)); }
+.cont h1 { font-size: 150px; margin-top: 26px; }
+.cont .rule { margin-top: 26px; }
+.cont .q { margin-top: 70px; font-size: 104px; line-height: 1.02; max-width: 900px; }
+.cont .wa { margin-top: 90px; padding: 34px 54px; gap: 30px; font-size: 64px; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: .01em; }
+.cont .wa svg { width: 76px; height: 76px; fill: var(--gold); }
+.cont .wa i { width: 2px; height: 76px; background: rgba(212,175,55,.6); }
+.cont .mail { margin-top: 38px; display: flex; gap: 18px; align-items: center; font-size: 42px; color: var(--fg); }
+.cont .mail svg, .cont .ig svg { width: 48px; height: 48px; }
+.cont .ig { margin-top: 18px; display: flex; gap: 18px; align-items: center; font-size: 42px; color: var(--fg); }
+.cont .bio { margin-top: 90px; display: grid; justify-items: center; gap: 22px; }
+.cont .bio svg { width: 76px; height: 76px; }
+.cont .bio p { font-size: 46px; line-height: 1.3; max-width: 760px; }
+.cont .bio p b { color: var(--gold-hi); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-servicos" viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="25" rx="2.5"/><path d="M6 15h36M18 40h12M24 34v6"/><path d="M15 22l-3 3 3 3M33 22l3 3-3 3M26 20l-4 10"/></symbol>
+    <symbol id="i-projetos" viewBox="0 0 48 48"><rect x="15" y="5" width="18" height="36" rx="4"/><path d="M21 10h6"/><rect x="5" y="12" width="12" height="24" rx="3"/><rect x="31" y="12" width="12" height="24" rx="3"/></symbol>
+    <symbol id="i-processo" viewBox="0 0 48 48"><circle cx="10" cy="10" r="5"/><circle cx="38" cy="24" r="5"/><circle cx="10" cy="38" r="5"/><path d="M15 10h10a8 8 0 0 1 8 8v1M33 29v1a8 8 0 0 1-8 8H15"/></symbol>
+    <symbol id="i-contato" viewBox="0 0 48 48"><path d="M24 6C13 6 5 13.4 5 22.5c0 5 2.5 9.4 6.5 12.4L10 42l8-4.2c1.9.5 3.9.7 6 .7 11 0 19-7.4 19-16.5S35 6 24 6z"/><path d="M16 23h.01M24 23h.01M32 23h.01" stroke-width="3"/></symbol>
+    <symbol id="i-avaliacoes" viewBox="0 0 48 48"><path d="M24 5l5.6 11.6 12.7 1.7-9.3 8.9 2.3 12.6L24 33.7l-11.3 6.1 2.3-12.6-9.3-8.9 12.7-1.7z"/></symbol>
+    <symbol id="i-site" viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="25" rx="2.5"/><path d="M6 15h36M18 40h12M24 34v6"/></symbol>
+    <symbol id="i-landing" viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="10"/><circle cx="24" cy="24" r="3"/></symbol>
+    <symbol id="i-app" viewBox="0 0 48 48"><rect x="14" y="4" width="20" height="40" rx="4"/><path d="M21 9h6M22 39h4"/><rect x="18" y="15" width="12" height="8" rx="1.5"/><path d="M18 28h12M18 32h8"/></symbol>
+    <symbol id="i-sistema" viewBox="0 0 48 48"><rect x="5" y="6" width="16" height="16" rx="2"/><rect x="27" y="6" width="16" height="10" rx="2"/><rect x="27" y="22" width="16" height="20" rx="2"/><rect x="5" y="28" width="16" height="14" rx="2"/></symbol>
+    <symbol id="i-ia" viewBox="0 0 48 48"><path d="M24 4l3.6 11.4L39 19l-11.4 3.6L24 34l-3.6-11.4L9 19l11.4-3.6z"/><path d="M38 31l1.5 4.5L44 37l-4.5 1.5L38 43l-1.5-4.5L32 37l4.5-1.5z"/></symbol>
+    <symbol id="i-bio" viewBox="0 0 48 48"><path d="M20 28a8 8 0 0 0 11.3 0l6-6a8 8 0 0 0-11.3-11.3l-2.5 2.5"/><path d="M28 20a8 8 0 0 0-11.3 0l-6 6A8 8 0 0 0 22 37.3l2.5-2.5"/></symbol>
+    <symbol id="i-alvo" viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="9"/><path d="M24 24l14-14M32 10h6v6"/></symbol>
+    <symbol id="i-loja" viewBox="0 0 48 48"><path d="M6 18l4-10h28l4 10M6 18h36M6 18c0 3 2 5 5 5s5-2 5-5c0 3 2 5 5 5s5-2 5-5c0 3 2 5 5 5s5-2 5-5"/><path d="M9 23v18h30V23M20 41V31h8v10"/></symbol>
+    <symbol id="i-pessoa" viewBox="0 0 48 48"><circle cx="24" cy="15" r="8"/><path d="M8 42c2-9 8-13 16-13s14 4 16 13"/></symbol>
+    <symbol id="i-carrinho" viewBox="0 0 48 48"><path d="M5 7h6l5 24h22l4-16H13"/><circle cx="19" cy="39" r="3"/><circle cx="35" cy="39" r="3"/></symbol>
+    <symbol id="i-ideia" viewBox="0 0 48 48"><path d="M17 34h14M19 40h10"/><path d="M24 6a12 12 0 0 0-7 21.8c1.3 1 2 2.4 2 4V34h10v-2.2c0-1.6.7-3 2-4A12 12 0 0 0 24 6z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 48 48"><path d="M20 28a8 8 0 0 0 11.3 0l6-6a8 8 0 0 0-11.3-11.3l-2.5 2.5"/><path d="M28 20a8 8 0 0 0-11.3 0l-6 6A8 8 0 0 0 22 37.3l2.5-2.5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 48 48"><rect x="5" y="10" width="38" height="28" rx="4"/><path d="M6 12l18 14 18-14"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 48 48"><rect x="7" y="7" width="34" height="34" rx="10"/><circle cx="24" cy="24" r="8"/><circle cx="34" cy="14" r="1.5"/></symbol>
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 32 32"><path d="M16 3.5A12.4 12.4 0 0 0 5.3 22.2L3.6 28.4l6.4-1.7A12.4 12.4 0 1 0 16 3.5Zm0 22.6c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-3.8 1 1-3.7-.2-.4A10.3 10.3 0 1 1 16 26.1Zm5.7-7.7c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.4 8.4 0 0 1-4.2-3.7c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.2 4.6 1.9.8 2.7.9 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.4Z"/></symbol>
+  </defs>
+</svg>
+
+<!-- ======================= CAPAS ======================= -->
+<section class="scene cover" id="capa-servicos"><div class="in"><div class="cover-ring"><svg class="ico"><use href="#i-servicos"/></svg><span class="lbl">Serviços</span></div></div></section>
+<section class="scene cover" id="capa-projetos"><div class="in"><div class="cover-ring"><svg class="ico"><use href="#i-projetos"/></svg><span class="lbl">Projetos</span></div></div></section>
+<section class="scene cover" id="capa-processo"><div class="in"><div class="cover-ring"><svg class="ico"><use href="#i-processo"/></svg><span class="lbl">Processo</span></div></div></section>
+<section class="scene cover" id="capa-contato"><div class="in"><div class="cover-ring"><svg class="ico"><use href="#i-contato"/></svg><span class="lbl">Contato</span></div></div></section>
+<section class="scene cover" id="capa-avaliacoes"><div class="in"><div class="cover-ring"><svg class="ico"><use href="#i-avaliacoes"/></svg><span class="lbl">Avaliações</span></div></div></section>
+
+<!-- ======================= CARREGANDO (animados) ======================= -->
+<section class="scene load" id="carregando-servicos"><div class="in">
+  <div class="spinner"></div>
+  <h1>Carregando <span class="serif">serviços<span class="dots"><i>.</i><i>.</i><i>.</i></span></span></h1>
+  <div class="bar"><b></b></div>
+</div><p class="tag mono">VELIDI.AI · Ideias grandes, soluções que funcionam</p></section>
+
+<section class="scene load" id="carregando-projetos"><div class="in">
+  <div class="spinner"></div>
+  <h1>Carregando <span class="serif">projetos<span class="dots"><i>.</i><i>.</i><i>.</i></span></span></h1>
+  <div class="bar"><b></b></div>
+</div><p class="tag mono">VELIDI.AI · Ideias grandes, soluções que funcionam</p></section>
+
+<section class="scene load" id="carregando-avaliacoes"><div class="in">
+  <div class="spinner"></div>
+  <h1>Carregando <span class="serif">avaliações<span class="dots"><i>.</i><i>.</i><i>.</i></span></span></h1>
+  <div class="bar"><b></b></div>
+  <p class="sub">Em breve, aqui, o que dizem os clientes que já tiraram a ideia do papel comigo.</p>
+</div><p class="tag mono">VELIDI.AI · Ideias grandes, soluções que funcionam</p></section>
+
+<!-- ======================= SERVIÇOS ======================= -->
+<section class="scene svc" id="servicos"><div class="in">
+  <div class="brand"><img src="img/globo.jpg" alt=""><b>VELIDI<em>.AI</em></b></div>
+  <h1 class="title">Serviços</h1>
+  <p class="lede">O que eu faço por você e pelo <b>seu negócio.</b></p>
+  <ul class="svc-list">
+    <li><svg class="ico"><use href="#i-site"/></svg><div><b>Sites profissionais</b><span>Presença que gera confiança</span></div></li>
+    <li><svg class="ico"><use href="#i-landing"/></svg><div><b>Landing pages</b><span>Visitantes em clientes</span></div></li>
+    <li><svg class="ico"><use href="#i-app"/></svg><div><b>Aplicativos</b><span>Sua ideia no celular</span></div></li>
+    <li><svg class="ico"><use href="#i-sistema"/></svg><div><b>Sistemas de gestão</b><span>Menos processos manuais</span></div></li>
+    <li><svg class="ico"><use href="#i-ia"/></svg><div><b>Inteligência artificial</b><span>Processos mais eficientes</span></div></li>
+    <li><svg class="ico"><use href="#i-bio"/></svg><div><b>Bio sites</b><span>Tudo em um único link</span></div></li>
+  </ul>
+  <div class="phone"><img src="img/portfolio-m.jpg" alt=""></div>
+  <div class="who">
+    <h2><svg class="ico"><use href="#i-alvo"/></svg>Para quem <span class="serif">é?</span></h2>
+    <ul>
+      <li><svg class="ico"><use href="#i-loja"/></svg>Negócios locais</li>
+      <li><svg class="ico"><use href="#i-pessoa"/></svg>Profissionais autônomos</li>
+      <li><svg class="ico"><use href="#i-carrinho"/></svg>Lojas e vendas online</li>
+      <li><svg class="ico"><use href="#i-ideia"/></svg>Quem tem uma ideia</li>
+    </ul>
+  </div>
+  <div class="cta"><span class="pill pill--gold">Fale comigo <svg><use href="#i-seta"/></svg></span></div>
+</div></section>
+
+<!-- ======================= PROJETOS ======================= -->
+<section class="scene proj" id="projetos"><div class="in">
+  <div class="brand"><img src="img/globo.jpg" alt=""><b>VELIDI<em>.AI</em></b></div>
+  <h1 class="title">Projetos <span class="serif">na prática</span></h1>
+  <div class="rule"></div>
+  <div class="fan" id="fan"></div>
+  <div class="count">
+    <b><span class="gold-text">11</span> projetos no ar</b>
+    <div class="chips"><span>Sites</span><span>Apps</span><span>Sistemas</span><span>IA</span><span>Landing pages</span><span>Bio sites</span><span>Lojas</span></div>
+  </div>
+  <p class="url">Veja todos em <b>velidi-portfolio.vercel.app</b></p>
+</div></section>
+
+<!-- ======================= PROCESSO ======================= -->
+<section class="scene proc" id="processo"><div class="in">
+  <div class="brand"><img src="img/globo.jpg" alt=""><b>VELIDI<em>.AI</em></b></div>
+  <h1 class="title">Da ideia à <span class="serif">entrega</span></h1>
+  <ol class="steps">
+    <li><span class="n">01</span><div><h3>Você me conta sua ideia</h3><p>O que precisa e qual problema quer resolver.</p></div></li>
+    <li><span class="n">02</span><div><h3>Planejamos a solução</h3><p>Uma estrutura clara, viável e alinhada ao objetivo.</p></div></li>
+    <li><span class="n">03</span><div><h3>Crio e desenvolvo</h3><p>Interface e funcionalidades modernas, com IA quando faz sentido.</p></div></li>
+    <li><span class="n">04</span><div><h3>Você testa</h3><p>Ajustamos juntos cada detalhe.</p></div></li>
+    <li><span class="n">05</span><div><h3>Entrega</h3><p>Pronto para usar e evoluir.</p></div></li>
+  </ol>
+</div></section>
+
+<!-- ======================= CONTATO ======================= -->
+<section class="scene cont" id="contato"><div class="in">
+  <svg class="ico big-ico"><use href="#i-contato"/></svg>
+  <h1 class="title">Contato</h1>
+  <div class="rule"></div>
+  <p class="q serif">Vamos tirar sua ideia do papel?</p>
+  <span class="pill pill--line wa"><svg><use href="#i-wa"/></svg><i></i>(19) 98421-6068</span>
+  <p class="mail"><svg class="ico"><use href="#i-mail"/></svg>ai.velidi@gmail.com</p>
+  <p class="ig"><svg class="ico"><use href="#i-ig"/></svg>@rauul.vktor</p>
+  <div class="bio"><svg class="ico"><use href="#i-link"/></svg><p>O link está na bio: é só tocar para ver o <b>portfólio completo</b>.</p></div>
+</div></section>
+
+<script>
+/* spinner: 12 traços */
+document.querySelectorAll(".spinner").forEach((s) => {
+  for (let i = 0; i < 12; i++) {
+    const t = document.createElement("i");
+    t.style.transform = `rotate(${i * 30}deg)`;
+    t.style.animationDelay = `${(i - 12) * 0.1}s`;
+    s.appendChild(t);
+  }
+});
+/* leque de projetos */
+const shots = ["finlux", "mana", "rotina", "lumen", "wrace", "motoflash", "glamour", "lacruz", "jesuslives"];
+const fan = document.getElementById("fan");
+shots.forEach((n, i) => {
+  const d = document.createElement("div");
+  const a = (i - (shots.length - 1) / 2) * 7.5;
+  d.className = "phone" + (i === 4 ? " mid" : "");
+  d.style.transform = `rotate(${a}deg)` + (i === 4 ? " translateY(-40px)" : "");
+  d.style.zIndex = i === 4 ? 50 : 10 + i;
+  d.innerHTML = `<img src="../../../assets/projects/${n}-m.webp" alt="">`;
+  fan.appendChild(d);
+});
+/* mostra a cena pedida em ?s= */
+const id = new URLSearchParams(location.search).get("s") || "servicos";
+(document.getElementById(id) || document.querySelector(".scene")).classList.add("on");
+</script>
+</body>
+</html>
