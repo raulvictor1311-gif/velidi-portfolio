@@ -390,13 +390,6 @@ ol, ul { padding: 0; list-style: none; }
 .spread__notch { position: absolute; left: 50%; top: 13px; width: 34%; height: 15px; translate: -50% 0; border-radius: 999px; background: #050505; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05); }
 .spread__card.is-active { box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.9), 0 0 50px -6px rgba(212, 175, 55, 0.45), 0 40px 60px -20px rgba(0, 0, 0, 0.95); }
 .spread__card:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
-.phone-bio { display: grid; gap: 8px; justify-items: center; align-content: center; height: 100%; padding: 30px 14px 18px;
-  background: radial-gradient(14rem 12rem at 30% 15%, rgba(124, 58, 237, 0.55), transparent 65%), radial-gradient(12rem 12rem at 80% 95%, rgba(212, 175, 55, 0.4), transparent 60%), #111113; }
-.bio__avatar { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; color: var(--ink); background: linear-gradient(135deg, var(--gold-hi), var(--gold)); }
-.bio__name { font-size: 0.8rem; font-weight: 600; }
-.bio__line { font-size: 0.62rem; color: var(--muted); margin-bottom: 4px; }
-.bio__btn { width: 100%; text-align: center; font-size: 0.66rem; padding: 8px 6px; border-radius: 10px; border: 1px solid var(--line-2); background: rgba(255, 255, 255, 0.04); }
-.bio__btn--gold { background: var(--gold); color: var(--ink); border-color: var(--gold); font-weight: 600; }
 
 .spread-info { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1.5rem; max-width: 46rem; margin: clamp(1.5rem, 4vw, 3rem) auto 0; }
 .spread-info__body { display: grid; gap: 0.7rem; justify-items: center; text-align: center; min-height: 11.5rem; align-content: start; min-width: 0; }
