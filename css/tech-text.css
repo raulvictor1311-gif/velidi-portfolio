@@ -1,0 +1,30 @@
+/* TechText — CSS original do React Bits (variante JS + CSS). Encaixe na VELIDI no fim. */
+.tech-text {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.tech-text-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- encaixe VELIDI ----------
+ * Sem JavaScript, o texto em HTML (dourado) continua aparecendo; quando o TechText inicia,
+ * o pai ganha .is-tech, o texto em HTML some e o canvas assume. */
+.tt-word, .tt-ai { display: none; }
+.is-tech > .hero__word-row, .is-tech > .footer__fallback { display: none; }
+.is-tech > .tt-word { display: block; width: 100%; height: 1.1em; margin-block: -0.16em; pointer-events: auto; }
+.is-tech > .tt-ai {
+  display: block; position: absolute; z-index: 1; margin: 0; line-height: 1; pointer-events: none;
+  font-family: var(--f-display); font-weight: 800; font-variation-settings: "wdth" 125; letter-spacing: 0;
+  color: var(--violet-2); filter: drop-shadow(0 0 18px rgba(139, 92, 246, 0.7));
+}
+.hero__word.is-tech { width: 100%; }
+.footer__word.is-tech > .tt-word { width: 86%; margin-inline: auto; }
+.hero__word .tech-text-canvas { filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.55)); }
+.footer__word.is-tech { display: block; position: relative; padding-inline: 0; }
