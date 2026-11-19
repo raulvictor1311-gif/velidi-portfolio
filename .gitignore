@@ -5,3 +5,4 @@ node_modules
 *.zip
 marketing/destaques/out/
 marketing/projetos/out/
+*-previa.jpg
